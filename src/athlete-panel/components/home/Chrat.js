@@ -15,7 +15,8 @@ import { Legend } from 'chart.js';
 const Chrat = () => {
 
   const { data_Chart, pending_show_Chart } = useChartFetch()
-
+  const data = data_Chart?.data
+  const slicedData = data.slice(0, 20)
   return (
 
     <div className='flex flex-col gap-5 pt-6 pr-4  rounded-[15px] bg-[#f8f9f9] h-[191px] w-[626px]'>
@@ -28,7 +29,7 @@ const Chrat = () => {
       </div>
 
       <ResponsiveContainer width="100%" height="100%" >
-        <LineChart width={300} height={100} data={data_Chart?.data}
+        <LineChart width={300} height={100} data={slicedData}
           margin={{
             top: 20,
             bottom: 10,
@@ -36,19 +37,19 @@ const Chrat = () => {
             left: 0,
           }}
         >
-  <XAxis dataKey="workoutDay" tick={{ fontSize: 12 }} />
-      <YAxis tick={{ fontSize: 12 }} />
-      <Tooltip />
-      <Legend />
-      <Line 
-        type="monotone" 
-        dataKey="tssActual" 
-        stroke="#8884d8" 
-        strokeDasharray="5 5" 
-        dot={{ r: 4 }} 
-        activeDot={{ r: 8 }} 
-        strokeWidth={2} 
-      />
+          {/* <XAxis dataKey="workoutDay" tick={{ fontSize: 12 }} /> */}
+          {/* <YAxis tick={{ fontSize: 12 }} /> */}
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="tssActual"
+            stroke="#8884d8"
+            strokeDasharray="5 5"
+            dot={{ r: 4 }}
+            activeDot={{ r: 8 }}
+            strokeWidth={2}
+          />
         </LineChart>
       </ResponsiveContainer>
 

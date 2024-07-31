@@ -1,20 +1,17 @@
 import React from 'react'
 
-const CustomTooltip = (props) => {
-    const { ctl } = props
-    console.log('props', ctl)
-    return (
-        <div className='flex flex-col  bg-[#F5F5F5] shadow-[0_0px_20px_rgb(0,0,0,0.1)]'>
-            <div className='flex gap-1 '>
-                <p>Date:</p>
-                <p>31/7/2024</p>
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        const { date, ctl } = payload[0].payload;
+        return (
+            <div className='flex flex-col justify-around items-end bg-[#F5F5F5] shadow-[0_0px_20px_rgb(0,0,0,0.1)] rounded-[12px] w-[220px] h-[50px] px-2'>
+                <p className="text-sm">{`Date: ${date}`}</p>
+                <p className="text-sm">{`Plannned Fitness(CLT): ${ctl}`}</p>
             </div>
-            <div className='flex gap-1'>
-                <p></p>
-                <p>Plannned Fitness (CLT):</p>
-            </div>
-        </div>
-    )
-}
+        );
+    }
 
-export default CustomTooltip
+    return null;
+};
+
+export default CustomTooltip; 

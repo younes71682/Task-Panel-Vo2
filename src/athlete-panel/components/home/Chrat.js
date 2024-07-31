@@ -2,16 +2,21 @@ import React from 'react';
 import { LineChart, Line, Tooltip, ResponsiveContainer } from 'recharts';
 import useChartFetch from '../api/useChart_Fetch';
 import { Legend } from 'chart.js';
-import CustomTooltip from './CustomTooltip';
 import { ScaleLoader } from 'react-spinners'
+import CustomTooltip from './CustomTooltip';
 
 const Chrat = () => {
 
   const { data_Chart, pending_show_Chart } = useChartFetch()
   const data = data_Chart?.data
-  const dataClt = data_Chart?.data[0]
-  console.log('dataClt', dataClt)
-  const slicedData = data?.slice(0, 20)
+
+  const formattedCtlData = data?.map(item => ({
+    ...item,
+    ctl: Math.floor(item.ctl),
+    date: new Date(item.workoutDay).toLocaleDateString(),
+   }));
+  
+
   return (
     <>
       {pending_show_Chart ?
@@ -30,7 +35,7 @@ const Chrat = () => {
           </div>
 
           <ResponsiveContainer width="100%" height="100%" >
-            <LineChart width={300} height={100} data={slicedData}
+            <LineChart width={300} height={100} data={formattedCtlData}
               margin={{
                 top: 20,
                 bottom: 10,
@@ -38,14 +43,16 @@ const Chrat = () => {
                 left: 0,
               }}
             >
-              <Tooltip content={<CustomTooltip dataKey={'ctl'} />} />
+
+              <Tooltip content={<CustomTooltip/>} />
               <Legend />
               <Line
+                onTouchCancel={false}
                 type="monotone"
-                dataKey="tssActual"
+                dataKey="ctl"
                 stroke="#8884d8"
                 strokeLinecap=''
-                dot={{ r: 4 }}
+                dot={false}
                 activeDot={{ r: 8 }}
                 strokeWidth={2}
               />

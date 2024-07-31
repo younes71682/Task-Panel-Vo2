@@ -10,13 +10,14 @@ import {
 } from 'recharts';
 import useChartFetch from '../api/useChart_Fetch';
 import { Legend } from 'chart.js';
+import CustomTooltip from './CustomTooltip';
 
 
 const Chrat = () => {
 
   const { data_Chart, pending_show_Chart } = useChartFetch()
   const data = data_Chart?.data
-  const slicedData = data.slice(0, 20)
+  const slicedData = data?.slice(0, 20)
   return (
 
     <div className='flex flex-col gap-5 pt-6 pr-4  rounded-[15px] bg-[#f8f9f9] h-[191px] w-[626px]'>
@@ -39,7 +40,7 @@ const Chrat = () => {
         >
           {/* <XAxis dataKey="workoutDay" tick={{ fontSize: 12 }} /> */}
           {/* <YAxis tick={{ fontSize: 12 }} /> */}
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <Legend />
           <Line
             type="monotone"

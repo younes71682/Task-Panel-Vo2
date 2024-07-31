@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <div className='flex pt-[2vh]'>
       <Sidebar/>
       {children}
     </div>

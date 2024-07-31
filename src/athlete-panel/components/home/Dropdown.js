@@ -2,8 +2,8 @@ import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+        
 const options = [
     'None',
     'Atria',
@@ -43,7 +43,7 @@ export default function Dropdown() {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <MoreVertIcon />
+                <KeyboardArrowDownIcon />
             </IconButton>
             <Menu
                 id="long-menu"

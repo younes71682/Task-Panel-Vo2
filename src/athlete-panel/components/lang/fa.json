@@ -1,4 +1,13 @@
 {
-    "welcome": "خوش آمدید",
-    "goodbye": "خداحافظ"
+  "panelRouteName": "خانه",
+  "panelCalendar": "تقویم",
+  "panelAnalys": "آنالیز",
+  "panelManagement": "مدیریت ورزشکاران",
+  "panelRepository-exercises": "مخزن تمرین‌ها",
+  "panelStrategy": "استراتژی",
+  "panelSetting": "تنظیمات",
+  "panelNotification": "آخرین فعالیت‌ها",
+  "panelHomeTitle": "ورزشکاران من",
+  "panelHomeTitelList": "مسابقات آینده",
+  "nameAthlete": "ماندانا دهقان"
 }

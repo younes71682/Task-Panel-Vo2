@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageSwitcher = () => {
     const { i18n } = useTranslation();
+    const [language, setLanguage] = useState('en')
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
+    const handleChangeLanguage = () => {
+        if (language === 'en') {
+            i18n.changeLanguage('en');
+            setLanguage('fa')
+        } else {
+            i18n.changeLanguage('fa');
+            setLanguage('en')
+        }
+    }
     return (
-        <div>
-            <button onClick={() => changeLanguage('fa')}>فارسی</button>
-            <button onClick={() => changeLanguage('en')}>English</button>
+        <div className='flex items-center'>
+            <button onClick={handleChangeLanguage}>{language}</button>
         </div>
     );
 };

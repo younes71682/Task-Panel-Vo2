@@ -1,4 +1,13 @@
 {  
-  "welcome": "Welcome",  
-  "goodbye": "Goodbye"  
+  "panelRouteName" : "Home",
+  "panelCalendar" : "Calendar",
+  "panelAnalys" : "Analys",
+  "panelManagement" : "Management",
+  "panelRepository-exercises" : "Repository of exercises",
+  "panelStrategy" : "Strategy",
+  "panelSetting" : "Setting",
+  "panelNotification" : "Notification",
+  "panelHomeTitle" : "My athletes",
+  "panelHomeTitelList":"Future competitions",
+  "nameAthlete" : "Mandana Dehghan"
 }  

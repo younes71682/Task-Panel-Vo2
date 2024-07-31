@@ -6,7 +6,7 @@ import Tanstackproviders from '../../Providers/Tanstackproviders'
 const Main = () => {
     return (
         <Router>
-            <Tanstackproviders>
+            <Tanstackproviders >
                 <Layout>
                     <Routes>
                         <Route path='/' element={<Home />} />

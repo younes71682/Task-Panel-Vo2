@@ -9,10 +9,10 @@ const useEvent_Fetch = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-            })
-            return response;
+            });
+            return response.data;
         },
-    })
+    });
     return {
         data_ShowList,
         pending_show_list

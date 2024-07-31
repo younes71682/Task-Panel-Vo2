@@ -37,8 +37,8 @@ export default function Dropdown() {
 
     return (
         <div className='flex items-center'>
-            <Typography className='mx-2 font-sans '>
-                {selectedOption ? selectedOption.name : 'Select an option'} 
+            <Typography >
+               <h1 className='font-bold text-lg font-sans pb-1'> {selectedOption ? selectedOption.name : 'Select an option'} </h1>
             </Typography>
             <IconButton
                 aria-label="more"

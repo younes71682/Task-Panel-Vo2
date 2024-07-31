@@ -9,22 +9,8 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import useChartFetch from '../api/useChart_Fetch';
+import { Legend } from 'chart.js';
 
-// const data = [
-//   { name: 'فروردین', Sales: 80, },
-//   { name: 'اردیبهشت', Sales: 85, },
-//   { name: 'خرداد', Sales: 50, },
-//   { name: 'تیر', Sales: 55, },
-//   { name: 'مرداد', Sales: 50, },
-//   { name: 'شهریور', Sales: 48, },
-//   { name: 'مهر', Sales: 42, },
-//   { name: 'آبان', Sales: 48, },
-//   { name: 'آذر', Sales: 40, },
-//   { name: 'دی', Sales: 60, },
-//   { name: 'بهمن', Sales: 20, },
-//   { name: 'اسفند', Sales: 25, },
-
-// ];
 
 const Chrat = () => {
 
@@ -43,19 +29,26 @@ const Chrat = () => {
 
       <ResponsiveContainer width="100%" height="100%" >
         <LineChart width={300} height={100} data={data_Chart?.data}
-         margin={{
+          margin={{
             top: 20,
             bottom: 10,
             right: 0,
             left: 0,
           }}
         >
-{/* 
-          <XAxis dataKey="workoutDay" tickFormatter={(tick) => new Date(tick).toLocaleDateString()} />
-          <YAxis /> */}
-          <Tooltip />
-          <Line type="monotone" dataKey="tssActual" stroke="#38709a" strokeWidth={2} activeDot={{ r: 8 }} />
-          {/* <Line type="monotone" dataKey="tssPlanned" stroke="#ff7300" strokeWidth={2} />     */}
+  <XAxis dataKey="workoutDay" tick={{ fontSize: 12 }} />
+      <YAxis tick={{ fontSize: 12 }} />
+      <Tooltip />
+      <Legend />
+      <Line 
+        type="monotone" 
+        dataKey="tssActual" 
+        stroke="#8884d8" 
+        strokeDasharray="5 5" 
+        dot={{ r: 4 }} 
+        activeDot={{ r: 8 }} 
+        strokeWidth={2} 
+      />
         </LineChart>
       </ResponsiveContainer>
 

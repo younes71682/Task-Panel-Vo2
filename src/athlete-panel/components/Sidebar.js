@@ -41,7 +41,7 @@ const Sidebar = () => {
     const params = useLocation()
     return (
 
-        <div className=' flex-col bg-[#FFFF] w-[240px] h-[98vh] rounded-tl-[24px] hidden md:block'>
+        <div className=' flex-col bg-[#FFFF] w-[240px] pb-[70px] rounded-tl-[24px] hidden md:block'>
             <div className='flex justify-center items-center pt-12 pb-7'>
                 <img src={logo} />
             </div>

@@ -22,7 +22,7 @@ export default function Dropdown() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedOptionId, setSelectedOptionId] = React.useState(options[0]?.id); 
 
-    const open = Boolean(anchorEl);
+    const open = (anchorEl);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);

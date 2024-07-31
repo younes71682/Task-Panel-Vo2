@@ -20,7 +20,7 @@ export default function Dropdown() {
     ];
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [selectedOptionId, setSelectedOptionId] = React.useState(options[0]?.id); // پیش‌فرض برای selectedOption
+    const [selectedOptionId, setSelectedOptionId] = React.useState(options[0]?.id); 
 
     const open = Boolean(anchorEl);
 
@@ -38,7 +38,7 @@ export default function Dropdown() {
     return (
         <div className='flex items-center'>
             <Typography className='mx-2 font-sans '>
-                {selectedOption ? selectedOption.name : 'Select an option'} {/* بررسی وجود selectedOption */}
+                {selectedOption ? selectedOption.name : 'Select an option'} 
             </Typography>
             <IconButton
                 aria-label="more"

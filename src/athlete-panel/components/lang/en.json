@@ -1,13 +1,17 @@
-{  
-  "panelRouteName" : "Home",
-  "panelCalendar" : "Calendar",
-  "panelAnalys" : "Analys",
-  "panelManagement" : "Management",
-  "panelRepository-exercises" : "Repository of exercises",
-  "panelStrategy" : "Strategy",
-  "panelSetting" : "Setting",
-  "panelNotification" : "Notification",
-  "panelHomeTitle" : "My athletes",
-  "panelHomeTitelList":"Future competitions",
-  "nameAthlete" : "Mandana Dehghan"
-}  
+{
+  "panelRouteName": "Home",
+  "panelCalendar": "Calendar",
+  "panelAnalys": "Analys",
+  "panelManagement": "Management",
+  "panelRepository-exercises": "Repository of exercises",
+  "panelStrategy": "Strategy",
+  "panelSetting": "Setting",
+  "panelNotification": "Notification",
+  "panelHomeTitle": "My athletes",
+  "panelHomeTitelList": "Future competitions",
+  "dropdonProfileName1": "Mandana Dehghan",
+  "dropdonProfileName2": "Mehdi Rezaei",
+  "dropdonProfileName3": "Ali Khakpour",
+  "dropdonProfileName4": "Zahra Akbari",
+  "dropdonProfileName5": "Nilufer Bitab"
+}

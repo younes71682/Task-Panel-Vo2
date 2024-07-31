@@ -7,13 +7,11 @@ import Flag from '../../assets/niger.svg';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import LanguageSwitcher from '../LanguageSwitcher';
 
-const Header = (props) => {
-    const {name} = props
+const Header = () => {
     return (
         <div className='flex justify-between w-full'>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-2 items-center'>
                 <img src={profile} alt='profil' className='w-[32px] h-[32px]' />
-                <h1>{name}</h1>
                 <Dropdown />
             </div>
 

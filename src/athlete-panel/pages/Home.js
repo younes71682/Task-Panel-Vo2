@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className='flex flex-col justify-around w-full '>
       <h1 className='text-2xl font-bold'>{t('panelHomeTitle')}</h1>
-      <Header name={t("nameAthlete")} />
+      <Header />
       <Chrat />
 
       <div className='flex flex-col gap-3'>

@@ -3,38 +3,43 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-        
-const options = [
-    'None',
-    'Atria',
-    'Callisto',
-    'Dione',
-    'Ganymede',
-    'Hangouts Call',
-    'Luna',
-    'Oberon',
-    'Phobos',
-    'Pyxis',
-    'Sedna',
-    'Titania',
-    'Triton',
-    'Umbriel',
-];
+import Typography from '@mui/material/Typography';
+import { useTranslation } from 'react-i18next';
 
 const ITEM_HEIGHT = 48;
 
 export default function Dropdown() {
+    const { t } = useTranslation();
+
+    const options = [
+        { id: 1, name: t('dropdonProfileName1') },
+        { id: 2, name: t('dropdonProfileName2') },
+        { id: 3, name: t('dropdonProfileName3') },
+        { id: 4, name: t('dropdonProfileName4') },
+        { id: 5, name: t('dropdonProfileName5') },
+    ];
+
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [selectedOptionId, setSelectedOptionId] = React.useState(options[0]?.id); // پیش‌فرض برای selectedOption
+
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+
+    const handleClose = (option) => {
+        setSelectedOptionId(option.id);
         setAnchorEl(null);
     };
 
+    const selectedOption = options.find(option => option.id === selectedOptionId);
+
     return (
-        <div>
+        <div className='flex items-center'>
+            <Typography className='mx-2 font-sans '>
+                {selectedOption ? selectedOption.name : 'Select an option'} {/* بررسی وجود selectedOption */}
+            </Typography>
             <IconButton
                 aria-label="more"
                 id="long-button"
@@ -42,6 +47,7 @@ export default function Dropdown() {
                 aria-expanded={open ? 'true' : undefined}
                 aria-haspopup="true"
                 onClick={handleClick}
+                className="text-gray-700"
             >
                 <KeyboardArrowDownIcon />
             </IconButton>
@@ -52,17 +58,35 @@ export default function Dropdown() {
                 }}
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
+                onClose={() => handleClose(null)}
                 PaperProps={{
                     style: {
                         maxHeight: ITEM_HEIGHT * 4.5,
                         width: '20ch',
+                        transformOrigin: 'left bottom',
                     },
+                }}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
                 }}
             >
                 {options.map((option) => (
-                    <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                        {option}
+                    <MenuItem
+                        key={option.id}
+                        selected={option.id === selectedOptionId}
+                        onClick={() => handleClose(option)}
+                        style={{
+                            backgroundColor: option.id === selectedOptionId ? '#f0f0f0' : 'transparent',
+                            fontFamily: 'sans-serif',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        {option.name}
                     </MenuItem>
                 ))}
             </Menu>

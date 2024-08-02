@@ -21,8 +21,8 @@ const Home = () => {
     { id: 12, date: '20 مرداد', name: 'قهرمانی اروپا', flag: Flag },
   ]
 
-  const { data_ShowList, pending_show_list } = useEvent_Fetch()
-  console.log('data_ShowList', data_ShowList)
+  // const { data_ShowList, pending_show_list } = useEvent_Fetch()
+  // console.log('data_ShowList', data_ShowList)
 
   const { t } = useTranslation()
 
@@ -37,10 +37,12 @@ const Home = () => {
         <div className='flex flex-wrap justify-between h-[341px] overflow-auto '>
           {list.map((i) => {
             return (
-              <div key={i.id} className='flex items-center gap-1 w-[341px] h-[56px] border-b-2 border-b-[#F0F0F0]'>
+              <div key={i.id} className='flex items-center gap-10 w-[341px] h-[56px] border-b-2 border-b-[#F0F0F0]'>
                 <p className='font-bold'>{i.date}</p>
-                <img src={i.flag} />
-                <p className='font-bold'>{i.name}</p>
+                <div className='flex items-center gap-1'>
+                  <img src={i.flag} />
+                  <p className='font-bold'>{i.name}</p>
+                </div>
               </div>
             )
           })}

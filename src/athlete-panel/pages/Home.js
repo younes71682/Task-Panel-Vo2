@@ -37,9 +37,11 @@ const Home = () => {
         <div className='flex flex-wrap justify-between h-[341px] overflow-auto '>
           {list.map((i) => {
             return (
-              <div key={i.id} className='flex items-center gap-10 w-[341px] h-[56px] border-b-2 border-b-[#F0F0F0]'>
-                <p className='font-bold'>{i.date}</p>
-                <div className='flex items-center gap-1'>
+              <div key={i.id} className='flex items-center  w-[341px] h-[56px] border-b-2 border-b-[#F0F0F0]'>
+                <div className='w-[30%]'>
+                  <p className='font-bold'>{i.date}</p>
+                </div>
+                <div className='flex items-center gap-1 w-[70%]'>
                   <img src={i.flag} />
                   <p className='font-bold'>{i.name}</p>
                 </div>
